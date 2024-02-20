@@ -39,4 +39,23 @@ function openmenu(){
 function closemenu(){
     sidemenu.style.left= "-400px";
 }
+//-----------alternative zur Hover funktion (Verwendung bei Project) (einfügen der Klasse .active in CSS entsprechend und onclick="toggleProject(this)" in Html wo es angewendet werden soll)-----------------
+
+function toggleProject(element) {
+    if (window.innerWidth < 600) {
+        // Prüft, ob das Element bereits als "active" markiert ist
+        const isActive = element.classList.contains('active');
+
+        // Entfernt die Klasse von allen Projekten, um sicherzustellen, dass nur eines aktiv ist
+        document.querySelectorAll('.project').forEach((project) => {
+            project.classList.remove('active');
+        });
+
+        // Fügt die "active" Klasse hinzu, wenn das Element vorher nicht aktiv war
+        if (!isActive) {
+            element.classList.add('active');
+        }
+        // Wenn es bereits aktiv war, wird die Klasse durch den vorherigen Schritt bereits entfernt
+    }
+}
 
