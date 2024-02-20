@@ -40,19 +40,32 @@ function closemenu(){
     sidemenu.style.left= "-400px";
 }
 //-----------alternative zur Hover funktion (Verwendung bei Project) (einfügen der Klasse .active in CSS entsprechend und onclick="toggleProject(this)" in Html wo es angewendet werden soll)-----------------
+function setupProjectClicks() {
+    document.querySelectorAll('.project').forEach((project) => {
+        // Handhabt Mausklicks
+        project.addEventListener('click', function() {
+            toggleProject(this);
+        });
+
+        // Handhabt Touch-Events
+        project.addEventListener('touchstart', function(event) {
+            event.preventDefault(); // Verhindert das Auslösen des Click-Events nach dem Touch-Event
+            toggleProject(this);
+        });
+    });
+}
 
 function toggleProject(element) {
     if (window.innerWidth < 600) {
         const isActive = element.classList.contains('active');
 
-        // Entfernt die 'active' Klasse von allen Projekten
+        // Toggle-Logik, wie zuvor definiert
         document.querySelectorAll('.project').forEach((project) => {
-            if (project !== element) { // Vermeidet das Entfernen der Klasse vom aktuellen Element
+            if (project !== element) {
                 project.classList.remove('active');
             }
         });
 
-        // Wenn das Element bereits aktiv war, wird es deaktiviert, sonst aktiviert
         if (isActive) {
             element.classList.remove('active');
         } else {
@@ -60,5 +73,10 @@ function toggleProject(element) {
         }
     }
 }
+
+// Initialisiert das Setup nach dem Laden der Seite
+document.addEventListener('DOMContentLoaded', setupProjectClicks);
+
+
 
 
