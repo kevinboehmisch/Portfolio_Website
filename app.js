@@ -40,43 +40,24 @@ function closemenu(){
     sidemenu.style.left= "-400px";
 }
 //-----------alternative zur Hover funktion (Verwendung bei Project) (einfügen der Klasse .active in CSS entsprechend und onclick="toggleProject(this)" in Html wo es angewendet werden soll)-----------------
-function setupProjectClicks() {
-    document.querySelectorAll('.project').forEach((project) => {
-        // Handhabt Mausklicks
-        project.addEventListener('click', function() {
-            toggleProject(this);
-        });
-
-        // Handhabt Touch-Events
-        project.addEventListener('touchstart', function(event) {
-            event.preventDefault(); // Verhindert das Auslösen des Click-Events nach dem Touch-Event
-            toggleProject(this);
-        });
-    });
-}
-
 function toggleProject(element) {
     if (window.innerWidth < 600) {
+        // Prüft, ob das Element bereits als "active" markiert ist
         const isActive = element.classList.contains('active');
 
-        // Toggle-Logik, wie zuvor definiert
+        // Entfernt die Klasse von allen Projekten, um sicherzustellen, dass nur eines aktiv ist
+        // Dies wird auch das aktuell angeklickte Element deaktivieren, wenn es bereits aktiv war
         document.querySelectorAll('.project').forEach((project) => {
-            if (project !== element) {
-                project.classList.remove('active');
-            }
+            project.classList.remove('active');
         });
 
-        if (isActive) {
-            element.classList.remove('active');
-        } else {
+        // Fügt die "active" Klasse hinzu, wenn das Element vorher nicht aktiv war
+        if (!isActive) {
             element.classList.add('active');
         }
+        
+        // Wenn es bereits aktiv war, wird die Klasse durch den vorherigen Schritt bereits entfernt
+        element.classList.remove('active');
     }
 }
-
-// Initialisiert das Setup nach dem Laden der Seite
-document.addEventListener('DOMContentLoaded', setupProjectClicks);
-
-
-
 
