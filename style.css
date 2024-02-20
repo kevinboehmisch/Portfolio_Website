@@ -210,7 +210,7 @@ nav ul a:hover::after{
     position: relative;
  
 }
-/*Implementieren der Projekt Namen und deren Verhalten*/
+/*Implementieren der Projekt Namen und deren Verhalten, Implementierung Hoverersatz bei Bildschirmen die kleiner als 600px sind*/
 .project-title{
     width: 100%;
     flex-direction: column; /* Richtet Kinder vertikal aus */
@@ -236,6 +236,7 @@ nav ul a:hover::after{
     margin-bottom: 20px; /* Abstand zum Text darunter */
     
 }
+.project.active .project-title h1,
 .project:hover .project-title h1 {
     transform: scale(1.2) translateY(-25px) translateX(5px);
     color: #000000;   
@@ -265,6 +266,7 @@ nav ul a:hover::after{
     overflow: hidden;
  
 }
+
 .project .img-container {
     position: relative;
     width: 90%;
@@ -283,6 +285,7 @@ nav ul a:hover::after{
 
    
 }
+.project.active .img-container::after,
 .project .img-container::after {
     content: '';
     position: absolute;
@@ -297,11 +300,13 @@ nav ul a:hover::after{
     transition: height 0.5s ease; /* Glatter Übergang für die Opazität */
 }
 
+.project.active .img-container,
 .project:hover .img-container{
     transform: scale(1.1);
     filter: grayscale(30%);
     background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0));
 }
+.project.active .img-container::after,
 .project:hover .img-container::after {
     height: 100%;
 }
@@ -330,6 +335,7 @@ nav ul a:hover::after{
  
     text-align: center;
 }
+.project.active .layer,
 .project:hover .layer{
     opacity: 1;
     transform: translateY(0);
