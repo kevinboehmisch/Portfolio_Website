@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website - Kevin Boehmisch</title>
+    <link rel="stylesheet" href="style.css"> 
+    <script defer src = "app.js"></script>
+    <script src="https://kit.fontawesome.com/86f0aeffd2.js" crossorigin="anonymous"></script>
+<body>
+<!---------------------------------------header------------------------------------------>
+    <div id="header">
+        <div class="container">  
+            <nav>
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                    <!-- <li><a href="#">Work Experience</a></li> zukünftiger Punkt, sobald ich mehr Erfahrung habe, wird dieser auch eingebaut -->
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="centered-container hidden">
+                <h1>Hello World! I'm Kevin Boehmisch<span class="blink">|</span></h1>
+                <p>Student Software Engineering (B.Eng.)</p>
+            </div> 
+            <div class="terminal-container hidden">
+                
+                <img src="images/background.png" alt="Background" class="terminal-background">
+                <div class="terminal-curser">|</div>
+                <a href="https://github.com/kevinboehmisch" class="github-link">github</a>
+                <a href="https://linkedin.com/in/kevinboehmisch" class="linkedin-link">linked In</a>
+            </div>           
+        </div>
+    </div>
+<!---------------------------------------Projects-------------------------------------->
+    <div id="projects">
+        <div class="container">
+            <h1 class="sub-title hidden">Projects</h1>
+            
+            <div class="project-list">
+                <div class="project hidden">
+                    
+                    <div class="img-container"> <!-- Umgebender Container für das Bild -->
+                        <img src="images/work-1.png" alt="Project Image">
+                    </div>
+                    <div class="project-title">
+                        <h1>Play2Gether App</h1>
+                    </div>
+                    <div class="layer">
+                        <h2>Prototype of an Application, which connects people based on their interests in different kind of Video Games</h2>
+                        <!--a href="#">soon more</a-->
+                    </div>
+                    
+                </div>
+  
+          
+                <div class="project hidden">
+                    <div class="img-container">
+                        <img src="images/work-2.png">
+                    </div>
+                    <div class="project-title">
+                        <h1>Portfolio Website</h1>
+                    </div>
+                    <div class="layer">
+                        <h2>Showcasing my creative, technical skills and my projects I've worked on. Here I will tell you more about the creation process of this project</h2>
+                        <!--a href="#">show more</a-->
+                    </div>
+                    
+                </div>
+      
+           
+                <div class="project hidden">
+                    <div class="img-container">
+                    <img src="images/work-3.png">
+                    </div>
+                    <div class="project-title">
+                        <h1>Microcontroller</h1>
+                    </div>
+                    <div class="layer">
+                        <h2>Hardware fix E-Scooter. Use of Arduino Controller to control signals of input and output </h2>
+                        <!--a href="#">soon more</a-->
+                    </div>
+                </div>
+       
+            </div>
+       
+        </div>
+    </div>
+<!-------------------------------------------about------------------------------------------>
+    <div id="about">
+        <div class="container">
+            <div class="about-col-2">
+                <h1 class="subtitle hidden">About Me</h1>
+                <h3 class="hidden">I've always been passionate about technological innovation and always wanted to work in a field where I can actively contribute to the future of technology. My passion for Computers started at a young age.
+                    In school I already furthered my knowledge through a computer science extension course, and participated in the "Internet-AG" as an extracurricular activity. 
+                    I wanted to learn even more and am now persuing my Bachelor's degree in Software Engineering, which allows me to work work creatively on my own projects and develop practical solutions, like this website. 
+                    With the comprehensive knowledge gained from my studies, I am ready to make valuable contributions and drive forward innovative technologies</h3>
+                    <div class="tab-titles hidden">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents  active-tab hidden" id="skills">
+                        <ul>
+                            <li><span>C++</span><br>Implementation of API for Hardware Communication in a professional field</li>
+                            <li><span>Python</span><br>Solving mathematical equations or analyzing statistical data in laboratory projects for the University of Applied Sciences Esslingen  </li>
+                            <li><span>Linux Bash</span><br>Building tools with Linux Bash scripts as a laboratory project</li>
+                            <li><span>C</span><br>Building kernel modules for Linux and several laboratory projects for the University of Applied Sciences Esslingen</li>
+                            <li><span>UI/UX</span><br>Designung Web/App Interfaces</li>
+                            <li><span>Web Development</span><br>Building Web App Interfaces</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents hidden" id="experience">
+                        <ul>
+                            <li>
+                                <span>Star Electronics</span>
+                                <ul>
+                                    <li>Working Student Software Development</li>
+                                    <li>Implementation of API interfaces for hardware communication</li>
+                                    <li>Analyzing of data buses, working with automotive network protocols (e.g., CAN, FLEXRAY, Automotive Ethernet)</li>
+                                    <li>Testing of soft-/hardware prototypes, firmware, FPGA images</li>
+                                </ul>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    <div class="tab-contents hidden" id="education">
+                        <ul>
+                            <li><span>2023 - current</span><br>Software Engineering (B. Eng) University of Applied Sciences Esslingen</li>
+                            <li><span>2011-2019</span><br>Abitur Werner-Heisenberg-Gymnasium Göppingen</li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+    </div>
+<!-------------------------------------------contact------------------------------------------>
+<div id="contact">
+    
+    <div class="container-contact">
+        <h1 class="subtitle-contact hidden">Contact Me</h1>
+        
+            <div class="contacts hidden">
+                <p>Email: kevinboehmisch@aol.com</p>
+                <div class="social-icons">
+                    <a href="https://github.com/kevinboehmisch">Github</a>
+                    <a href="https://linkedin.com/in/kevinboehmisch">LinkedIn</a>
+                    <a href="images/my-cv.pdf" download>Download CV</a>
+                </div>
+            </div>
+            
+
+    </div>
+    <div class="copyright">
+        <p>Copyright © Kevin Boehmisch</p>
+    </div>
+</div>
+</body>
+</html>
