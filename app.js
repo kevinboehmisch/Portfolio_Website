@@ -55,6 +55,7 @@ function toggleProject(element) {
             element.classList.add('active');
         }
         // Wenn es bereits aktiv war, wird die Klasse durch den vorherigen Schritt bereits entfernt
+        element.classList.remove('active');
     }
 }
 
