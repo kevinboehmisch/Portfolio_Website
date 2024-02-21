@@ -621,7 +621,7 @@ nav .fas{
 
 
 /*Anpassungen in der About Section*/
-    .about-col-2 h3{
+      .about-col-2 h3{
         font-size: 22px;
         font-weight: 400;
         margin-bottom: 30px;
@@ -632,8 +632,9 @@ nav .fas{
         margin-bottom: 130px;
     }
     .tab-links{
-        font-size: 26px;
-        margin-right: 20px;
+        font-size: 22px;
+        margin-right: 15px;
+   
     }
 
     .tab-contents ul li{
