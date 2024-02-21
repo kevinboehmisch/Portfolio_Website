@@ -42,20 +42,20 @@ function closemenu(){
 //-----------alternative zur Hover funktion (Verwendung bei Project) (einfügen der Klasse .active in CSS entsprechend und onclick="toggleProject(this)" in Html wo es angewendet werden soll)-----------------
 function toggleProject(element) {
     if (window.innerWidth < 600) {
-        // Prüft, ob das Element bereits als "active" markiert ist
         const isActive = element.classList.contains('active');
 
-        // Entfernt die Klasse von allen Projekten, um sicherzustellen, dass nur eines aktiv ist
+        // Entfernt die 'active' Klasse von allen Projekten
         document.querySelectorAll('.project').forEach((project) => {
-            project.classList.remove('active');
+            if (project !== element) { // Vermeidet das Entfernen der Klasse vom aktuellen Element
+                project.classList.remove('active');
+            }
         });
 
-        // Fügt die "active" Klasse hinzu, wenn das Element vorher nicht aktiv war
-        if (!isActive) {
+        // Wenn das Element bereits aktiv war, wird es deaktiviert, sonst aktiviert
+        if (isActive) {
+            element.classList.remove('active');
+        } else {
             element.classList.add('active');
         }
-        // Wenn es bereits aktiv war, wird die Klasse durch den vorherigen Schritt bereits entfernt
-        element.classList.remove('active');
     }
 }
-
