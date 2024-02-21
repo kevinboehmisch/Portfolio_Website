@@ -52,10 +52,11 @@ function toggleProject(element) {
         });
 
         // Wenn das Element bereits aktiv war, wird es deaktiviert, sonst aktiviert
-        if (isActive) {
-            element.classList.remove('active');
-        } else {
+         if (!isActive) {
             element.classList.add('active');
+        }
+        else{
+            // Wenn es bereits aktiv war, wird die Klasse durch den vorherigen Schritt bereits entfernt
         }
     }
 }
