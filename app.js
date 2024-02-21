@@ -46,7 +46,6 @@ function toggleProject(element) {
         const isActive = element.classList.contains('active');
 
         // Entfernt die Klasse von allen Projekten, um sicherzustellen, dass nur eines aktiv ist
-        // Dies wird auch das aktuell angeklickte Element deaktivieren, wenn es bereits aktiv war
         document.querySelectorAll('.project').forEach((project) => {
             project.classList.remove('active');
         });
@@ -55,9 +54,7 @@ function toggleProject(element) {
         if (!isActive) {
             element.classList.add('active');
         }
-        
         // Wenn es bereits aktiv war, wird die Klasse durch den vorherigen Schritt bereits entfernt
-        element.classList.remove('active');
     }
 }
 
